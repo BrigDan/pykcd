@@ -2,6 +2,9 @@
 XKCD browser
 
 ### Dependencies
+#### Installing XKCD module (pip3 required)
+`pip3 install xkcd`
+
 
 |Distro|Install Commands|
 |:----:|:----:|
