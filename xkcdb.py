@@ -37,6 +37,10 @@ class myWindow(Gtk.Window):
         self.nxt_btn.connect("clicked", self.on_next_clicked)
         self.main_box.pack_start(self.nxt_btn, True, True, 0)
 
+        self.prv_btn = Gtk.Button.new_with_label("Previous Comic")
+        self.prv_btn.connect("clicked", self.on_prv_clicked)
+        self.main_box.pack_start(self.prv_btn, True, True, 0)
+
     #    button = Gtk.Button.new_with_mnemonic("_Open")
     #    button.connect("clicked", self.on_open_clicked)
     #    self.main_box.pack_start(button, True, True, 0)
@@ -50,6 +54,10 @@ class myWindow(Gtk.Window):
 
     def on_next_clicked(self, button):
         self.cur_comic+=1
+        self.update_image()
+
+    def on_prv_clicked(self, button):
+        self.cur_comic+=-1
         self.update_image()
 
     def on_random_clicked(self,button):
