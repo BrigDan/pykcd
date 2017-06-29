@@ -53,7 +53,10 @@ class myWindow(Gtk.Window):
         self.show_all()
 
     def on_next_clicked(self, button):
-        self.cur_comic+=1
+        if self.cur_comic
+            self.nxt_btn.set_sensitive(False)
+        else:
+            self.cur_comic+=1
         self.update_image()
 
     def on_prv_clicked(self, button):
