@@ -7,7 +7,6 @@ gi.require_version("Gtk","3.0")
 from gi.repository import Gtk
 
 rand = SystemRandom()
-number = 0 #Default
 
 class myWindow(Gtk.Window):
     def __init__(self):
