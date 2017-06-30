@@ -24,24 +24,24 @@ class myWindow(Gtk.Window):
         self.image_area.show_all()
 
         #random button
-        self.rand_btn = Gtk.Button.new_with_label("random")
+        self.rand_btn = Gtk.Button.new_with_label("Random")
         self.rand_btn.connect ("clicked", self.on_random_clicked)
         #next button
-        self.nxt_btn = Gtk.Button.new_with_label(">")
+        self.nxt_btn = Gtk.Button.new_with_label("<")
         self.nxt_btn.connect("clicked", self.on_nxt_clicked)
         if self.cur_comic == xkcd.getLatestComicNum():
             self.nxt_btn.set_sensitive(False)
         #fast next button
-        self.fst_nxt_btn = Gtk.Button.new_with_label(">>")
+        self.fst_nxt_btn = Gtk.Button.new_with_label("<<")
         self.fst_nxt_btn.connect("clicked", self.on_fst_nxt_clicked)
         latest = xkcd.getLatestComicNum()
         if self.cur_comic > latest - 5:
             self.fst_nxt_btn.set_sensitive(False)
         #previous button
-        self.prv_btn = Gtk.Button.new_with_label("<")
+        self.prv_btn = Gtk.Button.new_with_label(">")
         self.prv_btn.connect("clicked", self.on_prv_clicked)
         #fast previous button
-        self.fst_prv_btn = Gtk.Button.new_with_label("<<")
+        self.fst_prv_btn = Gtk.Button.new_with_label(">>")
         self.fst_prv_btn.connect("clicked", self.on_fst_prv_clicked)
 
         #organise buttons ~~~~~~~~~~~~~~~~~
@@ -50,11 +50,12 @@ class myWindow(Gtk.Window):
         self.button_box = Gtk.HButtonBox()
         self.button_box.set_homogeneous(False)
 
-        self.button_box.pack_start(self.fst_prv_btn, False, True, 0)
-        self.button_box.pack_start(self.prv_btn, False, True, 0)
-        self.button_box.pack_start(self.rand_btn, False, True, 0)
-        self.button_box.pack_start(self.nxt_btn, False, True, 0)
         self.button_box.pack_start(self.fst_nxt_btn, False, True, 0)
+        self.button_box.pack_start(self.nxt_btn, False, True, 0)
+        self.button_box.pack_start(self.rand_btn, False, True, 0)
+        self.button_box.pack_start(self.prv_btn, False, True, 0)
+        self.button_box.pack_start(self.fst_prv_btn, False, True, 0)
+
         self.main_box.add(self.button_box)
 
         self.add(self.main_box)
