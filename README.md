@@ -1,9 +1,17 @@
-# pykcd
-XKCD browser
+#pykcd
+Simple XKCD browser written in Python using GTK modules.
+
+## TO-DO
+* Fix buttons and add saving
+* Add Searching by keyword
+* Rewrite in C++
+
 
 ### Dependencies
 #### Installing XKCD module (pip3 required)
 `pip3 install xkcd`
+
+
 
 
 |Distro|Install Commands|
