@@ -1,4 +1,4 @@
-#pykcd
+# pykcd
 Simple XKCD browser written in Python using GTK modules.
 
 ## TO-DO
